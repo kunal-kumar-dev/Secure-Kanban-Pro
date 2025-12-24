@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Kanban Pro</title>
+    
+    <!-- CSS FILE LINK -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="cursor"></div>
+
+    <header>
+        <div class="logo-area">
+            <h1>🔒 SecureKanban</h1>
+        </div>
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search tasks...">
+            
+            <button class="btn btn-sec" id="themeBtn">🌗 Theme</button>
+            <button class="btn btn-sec" id="exportBtn">💾 Export</button>
+            <button class="btn btn-sec" id="importBtn">📂 Import</button>
+            <!-- Hidden File Input -->
+            <input type="file" id="importFile" hidden>
+            
+            <button class="btn btn-primary" id="addColBtn">+ Column</button>
+        </div>
+    </header>
+
+    <div class="board" id="board">
+        <!-- Javascript will load columns here -->
+    </div>
+
+    <footer>
+        System Secured | <span>Dev: <strong style="color:var(--primary)">YourName</strong></span>
+    </footer>
+
+    <!-- Task Modal -->
+    <div class="modal" id="taskModal">
+        <div class="modal-box">
+            <h2>Task Details</h2>
+            <input type="text" id="inpTitle" placeholder="Enter Task Title...">
+            <select id="inpPriority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <textarea id="inpDesc" rows="4" placeholder="Enter Description..."></textarea>
+            
+            <input type="hidden" id="inpColId">
+            <input type="hidden" id="inpTaskId">
+            
+            <div class="modal-actions">
+                <button class="btn btn-sec" id="closeModalBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveTaskBtn">Save Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FILE LINK (End of Body) -->
+    <script src="script.js"></script>
+</body>
+</html>
